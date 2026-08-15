@@ -2,3 +2,7 @@
 title = "Введение в современную жидкостную хроматографию"
 authors = ["kgv"]
 language = "ru"
+
+[preprocessor.katex]
+after = ["links"]
+renderers = ["epub", "html", "pdf"]
