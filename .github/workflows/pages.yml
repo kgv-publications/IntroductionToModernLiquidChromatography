@@ -43,10 +43,6 @@ jobs:
     #     curl -sSL $url | tar -xz --directory=./mdbook
     #     echo `pwd`/mdbook >> $GITHUB_PATH
 
-    - name: Install mdbook-i18n-helpers
-      run: |
-        cargo install mdbook-i18n-helpers --locked
-
     - name: Install mdbook-katex
       run: |
         cargo install mdbook-katex --locked --version=0.10.0-alpha
