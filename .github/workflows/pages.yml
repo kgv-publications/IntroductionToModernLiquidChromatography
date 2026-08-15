@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
 
 env:
-  LANGUAGES: ru en
   MDBOOK_VERSION: 0.5.1
 
 jobs:
@@ -61,18 +60,6 @@ jobs:
 
     - name: Build HTML
       run: mdbook build
-
-    - name: Build all translations
-      run: |
-        for language in ${{ env.LANGUAGES }}; do
-          echo "::group::Building $language translation"
-          # Set language and adjust site URL. Clear the redirects
-          # since they are in sync with the source files, not the
-          # translation.
-          MDBOOK_BOOK__LANGUAGE=$language \
-          mdbook build -d book/$language
-          echo "::endgroup::"
-        done
 
     - name: Configure GitHub Pages
       uses: actions/configure-pages@v6
